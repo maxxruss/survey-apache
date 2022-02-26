@@ -39,7 +39,6 @@ docker run \
     -v ${SRC_DIR}:/var/www/html \
     --network=${NETWORK} \
     -p 80:80 \
-    -p 8080:8080 \
     ${MY_IMAGE_NAME}
 
 # Attach container to networks needed
