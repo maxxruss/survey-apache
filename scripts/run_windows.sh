@@ -38,7 +38,7 @@ docker run \
     --hostname ${MYHOSTNAME} \
     -v ${SRC_DIR}:/var/www/html \
     --network=${NETWORK} \
-    -p 82:80 \
+    -p 80:80 \
     -p 8080:8080 \
     ${MY_IMAGE_NAME}
 
