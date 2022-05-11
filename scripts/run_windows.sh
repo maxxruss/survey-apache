@@ -9,7 +9,7 @@ DIR="`readlink -f "$DIR"`"
 
 CONTAINER_DIR="`readlink -f "$DIR/.."`"
 CONTAINER_CONFIG_DIR="$CONTAINER_DIR/config"
-SRC_DIR="/${PWD}/../src"
+SRC_DIR="/${PWD}/src"
 
 [ -d "$CONTAINER_DIR" ] || eval 'echo "Directory CONTAINER_DIR=$CONTAINER_DIR does not exist" 1>&2; exit 1'
 [ -d "$CONTAINER_CONFIG_DIR" ] || eval 'echo "Directory CONTAINER_CONFIG_DIR=$CONTAINER_CONFIG_DIR does not exist" 1>&2; exit 1'
@@ -39,7 +39,6 @@ docker run \
     -v ${SRC_DIR}:/var/www/html \
     --network=${NETWORK} \
     -p 80:80 \
-    -p 8080:8080 \
     ${MY_IMAGE_NAME}
 
 # Attach container to networks needed
